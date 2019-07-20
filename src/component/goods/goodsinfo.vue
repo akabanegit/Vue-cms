@@ -110,6 +110,10 @@ export default {
         add_goods(){
             //添加到购物车
             this.ballflag=!this.ballflag;
+            var goodsinfos={id:this.id,count:this.selectCount,preice:this.goodsInfo.sell_price,select:true}
+            //拼接出一个要保存到store中的car数组的对象
+
+            this.$store.commit("addToCar",goodsinfos)
 
         },
         beforeEnter(el){

@@ -7,6 +7,9 @@
 
 3.在中间区域防止一个router-view组件
 
+
+
+
 ## tabbar路由建立
 入口文件注册路由 
 
@@ -151,3 +154,40 @@ import comment from './comment.vue'
 不需要共享 这些不需要共享的私有数据 没有必要放到vuex中
 props 和data  和vuex的区别
 4.vuex是一个全局的共享数据存储区域 就相当于一个数据仓库
+5.操作数据需要让仓库自己操作 重点！！！！！！！
+
+
+### vuex总结
+1.state中数据不能直接修改 如果修改需要通过mutations
+2.如果组件想直接从state上获取数据 需要this.$store.state.***
+3.如果组件想要修改数据 必须使用mutations听得方法  需要通过
+this.$store.commit('方法的名字',唯一的参数)
+3.如果store上的state的数据 在对外提供的是 需要做一层包装 推荐使用getters
+ $store.getters.***
+
+ 当更新car之后 把car数组存储到本地 localStorage中
+
+
+ ## getters的使用
+ 1.如何从购物车中获取商品数量
+ 2.先创建一个空对象 循环购物车所有商品数据 吧当前循环这条商品的id当做对象属性名
+ count值作为属性值 例如{"88":3,"89":4}
+ 3.利用vuex getters计算属性 创建新对象  再引用getters
+ 4.再从父组件传递值给子组件
+
+
+ # 本项目难点在于购物车的逻辑
+1.什么时候用mutations（往store放数据）  什么时候用getters(从store取数据)
+2.ES6的foreach  some的使用
+3.vux中的car是作为中转站
+
+## 购物车总价的计算
+
+
+## 返回按钮 
+1.利用watch来实现路由的监听
+
+
+
+## 自己所想的需求
+1.搜索功能能找到对应的商品页面 输入商品名称 点击搜索 跳转到商品页面组件

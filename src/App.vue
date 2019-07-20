@@ -1,7 +1,11 @@
 <template>
   <div class="app-container">
     <!-- 顶部Header区域 -->
-    <mt-header fixed title="Vue项目"></mt-header>
+    <mt-header fixed title="Vue项目">
+          <span  slot="left" @click="goBack" v-show="flag">
+            <mt-button icon="back">返回</mt-button>
+          </span>
+    </mt-header>
 
     <!-- 中间的 路由 router-view区域 -->
     <transition>
@@ -20,7 +24,7 @@
 				<span class="mui-tab-label">会员</span>
 			</router-link>
 			<router-link class="mui-tab-item-llb" to="/shopcar">
-				<span class="mui-icon mui-icon-extra mui-icon-extra-cart "><span class="mui-badge" id="badge">0</span></span>
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart "><span class="mui-badge" id="badge">{{$store.getters.getAllCount}}</span></span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
 			<router-link class="mui-tab-item-llb" to="/search">
@@ -32,6 +36,40 @@
 </template>
 
 <script>
+
+export default {
+  data(){
+    return{
+      flag:false,
+    }
+  },
+  created(){
+    if(this.$route.path==="/home"||this.$route.path==="/"){
+      this.flag=false
+    }
+    else{
+      this.flag=true
+    }
+  },
+  methods:{
+    goBack(){
+      //路由历史操作
+      this.$router.go(-1)
+    }
+  },
+  watch:{
+    //监听路由地址
+    "$route.path":function(newVal){
+      if(newVal==="/home"||newVal==="/"){
+        this.flag=false
+      }
+      else{
+        this.flag=true;
+      }
+    }
+  }
+
+}
 </script>
 
 

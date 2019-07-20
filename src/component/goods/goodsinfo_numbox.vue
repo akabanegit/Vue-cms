@@ -1,7 +1,7 @@
 <template>
 <!-- max不知道什么时候能拿到 但最终肯定能得到一个真正的max -->
 <!-- 使用watch属性监听父组件传递过来的max  不管watch会被触发几次 但是最后一次肯定是合法的数值 -->
-    <div class="mui-numbox" data-numbox-min='1' >
+    <div class="mui-numbox" data-numbox-min='1' :data-numbox-max="max">
         <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
         <input id="test" class="mui-input-numbox" type="number" value="1" ref="numbox" @change="countChanged"/>
         <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
@@ -16,6 +16,7 @@ export default {
     mounted(){
         //初始化数字选择框组件
         mui(".mui-numbox").numbox()
+        
     },
     methods:{
         countChanged(){
@@ -27,7 +28,7 @@ export default {
     watch:{
         //使用jsapi 来监听 设置numbox的最大值
         'max':function(newVal,oldVal){
-            mui(Selector).numbox().setOption('max',newVal)
+            mui(".mui-numbox").numbox().setOption('max',newVal)
         }
     }
 }

@@ -16,7 +16,7 @@
             预览缩略图续安装插件: npm i vue-preview -s
             $preview.open
         -->
-        <div class="suoluetu">
+        <div class="thumbs">
             <!-- 最新缩略图版插件和之前不一样，看这里
              https://blog.csdn.net/qq_36742720/article/details/83270636
              -->
