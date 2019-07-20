@@ -83,12 +83,12 @@ var store = new Vuex.Store({
       //相当于计算属性 也相当于filters
       getAllCount(state){
         var c=0
-        if(state.car){
+        
         state.car.forEach(item=>{
           c+=item.count
         })
         return c
-      }},
+      },
       getGoodsCount(state){
         var o={}
         state.car.forEach(item=>{
