@@ -49336,7 +49336,7 @@ _vue2.default.use(_vueRouter2.default);
 
 
 //每次进入网站 肯定先调用main  先从本地存储中调用car
-var car = JSON.parse(localStorage.getItem('car' || '[]'));
+var car = JSON.parse(localStorage.getItem('car') || '[]');
 //导入vuex包  Vuex的使用
 
 _vue2.default.use(_vuex2.default);
@@ -49411,12 +49411,11 @@ var store = new _vuex2.default.Store({
     //相当于计算属性 也相当于filters
     getAllCount: function getAllCount(state) {
       var c = 0;
-      if (state.car) {
-        state.car.forEach(function (item) {
-          c += item.count;
-        });
-        return c;
-      }
+
+      state.car.forEach(function (item) {
+        c += item.count;
+      });
+      return c;
     },
     getGoodsCount: function getGoodsCount(state) {
       var o = {};
@@ -49494,6 +49493,7 @@ var vm = new _vue2.default({
   //   router // 4. 将路由对象挂载到 vm 上
   router: _router2.default,
   store: store //将vuex挂载到 vm实例中
+  // components:{app}
 });
 
 // 注意： App 这个组件，是通过 VM 实例的 render 函数，渲染出来的， render 函数如果要渲染 组件， 渲染出来的组件，只能放到 el: '#app' 所指定的 元素中；
