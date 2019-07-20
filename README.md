@@ -193,4 +193,4 @@ this.$store.commit('方法的名字',唯一的参数)
 1.搜索功能能找到对应的商品页面 输入商品名称 点击搜索 跳转到商品页面组件
 
 ### 在使用phpstudy开启服务端 有个小bug 关于forEach的报错 
-### 解决方法：在getAllCount这个里 对foreach之前加一个判断是否存在  估计是由于异步的原因报错
+### 解决方法：在var car=JSON.parse(localStorage.getItem('car')||'[]')这里没给初始数组 所以forEach报错
