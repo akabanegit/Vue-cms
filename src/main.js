@@ -82,12 +82,13 @@ var store = new Vuex.Store({
       // 其次 跟computed比较像 只要state中数据发生变化 且getters正好引用这个数据 就会触发getters重新求值
       //相当于计算属性 也相当于filters
       getAllCount(state){
-        var c=0;
+        var c=0
+        if(state.car){
         state.car.forEach(item=>{
-          c= c+item.count;
+          c+=item.count
         })
-        return c;
-      },
+        return c
+      }},
       getGoodsCount(state){
         var o={}
         state.car.forEach(item=>{
