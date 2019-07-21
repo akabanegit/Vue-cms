@@ -2,9 +2,11 @@
 # Bulid Setup
 
 下载mui-master 放入lib中
-`npm install
- npm run dev
-`
+
+`npm install`
+
+`npm run dev`
+
 
 
 # 首页制作
