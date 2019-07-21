@@ -1,4 +1,12 @@
 # 技术栈 Vue+Vue.resource+Vue.Router+VueX
+# Bulid Setup
+
+下载mui-master 放入lib中
+`npm install
+ npm run dev
+`
+
+
 # 首页制作
 1.制作header区域，使用mint-UI组件。
     注意：这里使用了全局导入,因为官网说明如果要按需导入需修改.babel文件。
