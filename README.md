@@ -1,3 +1,5 @@
+# 技术栈 Vue+Vue.resource+Vue.Router+VueX
+
 # 项目演示图片
 
 # 项目安装启动
