@@ -2,6 +2,11 @@
 
 # 项目演示图片
 
+![Image text](https://raw.githubusercontent.com/akabanegit/Vue-cms/master/img-folder/cms1.PNG)
+
+![Image text](https://raw.githubusercontent.com/akabanegit/Vue-cms/master/img-folder/cms2.PNG)
+
+![Image text](https://raw.githubusercontent.com/akabanegit/Vue-cms/master/img-folder/cms3.PNG)
 # 项目安装启动
 `npm install`
 
